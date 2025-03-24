@@ -1,145 +1,258 @@
-import React, { useState } from 'react';
-import { BrainCircuit, Shield, Server, Lock, Mail, ChevronRight, ExternalLink } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline AI Solutions</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-black min-h-screen text-white">
+    <header class="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="md:w-1/2 text-center md:text-left">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4">
+                Offline AI Solutions
+            </h1>
+            <p class="text-gray-300 text-lg mb-8">
+                Secure, on-premise AI solutions for enterprises. Deploy advanced machine learning models without compromising your sensitive data.
+            </p>
+            <a href="https://github.com/your-repo/your-project" target="_blank" rel="noopener noreferrer" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-lg hover:from-blue-600 hover:to-purple-600 shadow-lg inline-flex items-center">
+                View on GitHub
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2 w-5 h-5"><path d="M3 12h14"></path><path d="m10 19 7-7-7-7"></path></svg>
+            </a>
+            <div id="offline-warning" class="mt-4 text-red-400 text-sm hidden">
+                <p><span class="font-semibold">Offline:</span> Some features may be limited. Please check your network connection.</p>
+            </div>
+        </div>
+        <div class="md:w-1/2">
+            <div class="bg-white/5 backdrop-blur-md rounded-xl p-8 shadow-lg border border-white/10 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain-circuit text-blue-400 w-full h-64"><path d="M20 12a8 8 0 1 0-16 0 8 8 0 0 0 16 0Z"></path><path d="M20 12h-4"></path><path d="M8 12H4"></path><path d="M12 8V4"></path><path d="M12 20v-4"></path><path d="M15.4 9.17 14 8"></path><path d="M9.4 14.83 10 16"></path><path d="M14 16l1.4 1.17"></path><path d="M10 8l-1.4 1.17"></path></svg>
+            </div>
+        </div>
+    </header>
 
-// Layout Components
-const Layout = ({ children }) => (
-  <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
-    <Navbar />
-    <main className="pt-20">
-      {children}
-    </main>
-    <Footer />
-  </div>
-);
-
-const Navbar = ({ onNavigate }) => (
-  <nav className="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 z-50">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex justify-between h-20">
-        <div className="flex items-center">
-          <button onClick={() => onNavigate('home')} className="flex items-center space-x-2">
-            <BrainCircuit className="h-8 w-8 text-cyan-500" />
-            <span className="text-2xl font-bold text-white">
-              <span className="text-cyan-500">CYCLE</span>TECH.AI
-            </span>
-          </button>
+    <section class="container mx-auto px-4 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4">
+                Key Features
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Our platform is engineered for security, performance, and ease of use, ensuring you get the most out of your AI investments.
+            </p>
         </div>
-        <div className="flex items-center space-x-8">
-          <NavButton onClick={() => onNavigate('solutions')} icon={<Server />} label="Solutions" />
-          <NavButton onClick={() => onNavigate('security')} icon={<Shield />} label="Security" />
-          <NavButton onClick={() => onNavigate('contact')} icon={<Mail />} label="Contact" />
-          <button className="bg-cyan-500 hover:bg-cyan-400 text-white px-4 py-2 rounded-lg transition-colors">
-            Schedule Demo
-          </button>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-xl hover:border-blue-500/20 transition-all duration-300">
+                <div class="mb-4 text-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check w-8 h-8"><path d="M12 22s8-4 8-10V5l-8-2-8 2v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">Offline Deployment</h3>
+                <p class="text-gray-300">Run AI models on-site, behind your firewall, ensuring complete data privacy and compliance.</p>
+            </div>
+            <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-xl hover:border-blue-500/20 transition-all duration-300">
+                <div class="mb-4 text-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu w-8 h-8"><rect width="16" height="16" x="4" y="4" rx="4"></rect><circle cx="8" cy="8" r="2"></circle><circle cx="12" cy="8" r="2"></circle><circle cx="16" cy="8" r="2"></circle><circle cx="8" cy="12" r="2"></circle><circle cx="16" cy="12" r="2"></circle><circle cx="8" cy="16" r="2"></circle><circle cx="12" cy="16" r="2"></circle><circle cx="16" cy="16" r="2"></circle></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">Secure Infrastructure</h3>
+                <p class="text-gray-300">Benefit from robust security measures, including encryption, access controls, and regular audits.</p>
+            </div>
+            <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-xl hover:border-blue-500/20 transition-all duration-300">
+                <div class="mb-4 text-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database w-8 h-8"><ellipse cx="12" cy="12" rx="10" ry="5"></ellipse><path d="M2 12c0 1.66 4 3 10 3s10-1.34 10-3"></path><path d="M2 17c0 1.66 4 3 10 3s10-1.34 10-3"></path><path d="M2 7c0 1.66 4 3 10 3s10-1.34 10-3"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">Scalable Solutions</h3>
+                <p class="text-gray-300">Easily scale your AI capabilities as your business grows, with support for distributed computing.</p>
+            </div>
+            <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-xl hover:border-blue-500/20 transition-all duration-300">
+                <div class="mb-4 text-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-2 w-8 h-8"><path d="M19.14 14.86a2 2 0 0 1-2.83-2.83l.7-2.9a3 3 0 0 0-4.5-4.2L9.1 2.57a2 2 0 0 1-2.83 2.83l-2.9.7a3 3 0 0 0-4.2 4.5l-1.5 3.67a2 2 0 0 1 2.83 2.83l.7 2.9a3 3 0 0 0 4.5 4.2l2.3 1.43a2 2 0 0 1 2.83-2.83l2.9-.7a3 3 0 0 0 4.2-4.5l1.5-3.67z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">Customizable Models</h3>
+                <p class="text-gray-300">Tailor AI models to your specific needs with our flexible platform and comprehensive development tools.</p>
+            </div>
+            <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-xl hover:border-blue-500/20 transition-all duration-300">
+                <div class="mb-4 text-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-8 h-8"><path d="M15 18v-6a3 3 0 1 0-6 0v6"></path><path d="M9 18c-4.51 2-5-2-7-2"></path><path d="M15 18c4.51 2 5-2 7-2"></path><path d="M3 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"></path><path d="M13 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">User-Friendly Interface</h3>
+                <p class="text-gray-300">Intuitive tools and dashboards make it easy for your team to manage and monitor AI deployments.</p>
+            </div>
+            <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-xl hover:border-blue-500/20 transition-all duration-300">
+                <div class="mb-4 text-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain-circuit w-8 h-8"><path d="M20 12a8 8 0 1 0-16 0 8 8 0 0 0 16 0Z"></path><path d="M20 12h-4"></path><path d="M8 12H4"></path><path d="M12 8V4"></path><path d="M12 20v-4"></path><path d="M15.4 9.17 14 8"></path><path d="M9.4 14.83 10 16"></path><path d="M14 16l1.4 1.17"></path><path d="M10 8l-1.4 1.17"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">Real-time Processing</h3>
+                <p class="text-gray-300">Process data and generate insights in real-time, enabling faster decision-making.</p>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
-);
-
-const NavButton = ({ onClick, icon, label }) => (
-  <button 
-    onClick={onClick}
-    className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors"
-  >
-    {React.cloneElement(icon, { className: "h-5 w-5" })}
-    <span>{label}</span>
-  </button>
-);
-
-const Footer = () => (
-  <footer className="bg-gray-900 border-t border-gray-800 mt-20">
-    <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div className="space-y-4">
-          <BrainCircuit className="h-8 w-8 text-cyan-500" />
-          <p className="text-gray-400 text-sm">
-            Secure, on-premise AI solutions for enterprises with strict data privacy requirements.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-white font-semibold mb-4">Solutions</h3>
-          <ul className="space-y-2 text-gray-400">
-            <li>On-Premise AI</li>
-            <li>Custom Models</li>
-            <li>Enterprise Security</li>
-            <li>Deployment Options</li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-white font-semibold mb-4">Company</h3>
-          <ul className="space-y-2 text-gray-400">
-            <li>About Us</li>
-            <li>Security</li>
-            <li>Compliance</li>
-            <li>Contact</li>
-          </ul>
-        </div>
-        <div>
-          <h3 className="text-white font-semibold mb-4">Contact</h3>
-          <p className="text-gray-400">info@cycletech.ai</p>
-        </div>
-      </div>
-      <div className="mt-8 pt-8 border-t border-gray-800 text-gray-400 text-sm">
-        © {new Date().getFullYear()} CycleTech AI. All rights reserved.
-      </div>
-    </div>
-  </footer>
-);
-
-const HomePage = () => (
-  <div>
-    <section className="relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Secure <span className="text-cyan-500">On-Premise AI</span> for Enterprise
-          </h1>
-          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Deploy powerful AI solutions within your secure infrastructure. 
-            Maintain complete control over your intellectual property and sensitive data.
-          </p>
-          <div className="flex justify-center space-x-4">
-            <button className="bg-cyan-500 hover:bg-cyan-400 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
-              Get Started
-            </button>
-            <button className="border border-gray-600 hover:border-cyan-500 text-gray-300 px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
-              Learn More
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      <div className="absolute inset-0 -z-10 opacity-30">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
-      </div>
     </section>
-  </div>
-);
 
-export default function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+    <section class="bg-white/5 backdrop-blur-md py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4">
+                    Our Services
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    We offer a comprehensive suite of services to help you implement and manage your offline AI solutions.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-xl hover:border-blue-500/20 transition-all duration-300 group">
+                    <div class="mb-4 text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain-circuit w-10 h-10"><path d="M20 12a8 8 0 1 0-16 0 8 8 0 0 0 16 0Z"></path><path d="M20 12h-4"></path><path d="M8 12H4"></path><path d="M12 8V4"></path><path d="M12 20v-4"></path><path d="M15.4 9.17 14 8"></path><path d="M9.4 14.83 10 16"></path><path d="M14 16l1.4 1.17"></path><path d="M10 8l-1.4 1.17"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors">AI Model Development</h3>
+                    <p class="text-gray-300 mb-4">Our team of experts will work with you to develop custom AI models tailored to your specific business needs.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li class="text-gray-300">Custom model design</li>
+                        <li class="text-gray-300">Algorithm selection</li>
+                        <li class="text-gray-300">Performance optimization</li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-xl hover:border-blue-500/20 transition-all duration-300 group">
+                    <div class="mb-4 text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check w-10 h-10"><path d="M12 22s8-4 8-10V5l-8-2-8 2v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors">Offline Deployment</h3>
+                    <p class="text-gray-300 mb-4">We handle the entire deployment process, ensuring a smooth and secure transition to an offline environment.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li class="text-gray-300">On-premise installation</li>
+                        <li class="text-gray-300">Configuration and setup</li>
+                        <li class="text-gray-300">Integration with existing systems</li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-xl hover:border-blue-500/20 transition-all duration-300 group">
+                    <div class="mb-4 text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users w-10 h-10"><path d="M15 18v-6a3 3 0 1 0-6 0v6"></path><path d="M9 18c-4.51 2-5-2-7-2"></path><path d="M15 18c4.51 2 5-2 7-2"></path><path d="M3 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"></path><path d="M13 8a4 4 0 1 1 8 0 4 4 0 0 1-8 0Z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors">Ongoing Support</h3>
+                    <p class="text-gray-300 mb-4">We provide continuous support and maintenance to ensure your AI systems are always running at peak performance.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li class="text-gray-300">24/7 technical support</li>
+                        <li class="text-gray-300">Regular updates and maintenance</li>
+                        <li class="text-gray-300">Performance monitoring</li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-xl hover:border-blue-500/20 transition-all duration-300 group">
+                    <div class="mb-4 text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database w-10 h-10"><ellipse cx="12" cy="12" rx="10" ry="5"></ellipse><path d="M2 12c0 1.66 4 3 10 3s10-1.34 10-3"></path><path d="M2 17c0 1.66 4 3 10 3s10-1.34 10-3"></path><path d="M2 7c0 1.66 4 3 10 3s10-1.34 10-3"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors">Data Engineering</h3>
+                    <p class="text-gray-300 mb-4">We help you prepare and manage your data for optimal AI performance.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li class="text-gray-300">Data cleaning and preprocessing</li>
+                        <li class="text-gray-300">Feature engineering</li>
+                        <li class="text-gray-300">Data warehousing</li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-xl hover:border-blue-500/20 transition-all duration-300 group">
+                    <div class="mb-4 text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu w-10 h-10"><rect width="16" height="16" x="4" y="4" rx="4"></rect><circle cx="8" cy="8" r="2"></circle><circle cx="12" cy="8" r="2"></circle><circle cx="16" cy="8" r="2"></circle><circle cx="8" cy="12" r="2"></circle><circle cx="16" cy="12" r="2"></circle><circle cx="8" cy="16" r="2"></circle><circle cx="12" cy="16" r="2"></circle><circle cx="16" cy="16" r="2"></circle></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors">Hardware Optimization</h3>
+                    <p class="text-gray-300 mb-4">We optimize your hardware infrastructure for efficient offline AI processing.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li class="text-gray-300">Hardware selection and procurement</li>
+                        <li class="text-gray-300">Performance tuning</li>
+                        <li class="text-gray-300">Scalability planning</li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/10 hover:shadow-xl hover:border-blue-500/20 transition-all duration-300 group">
+                    <div class="mb-4 text-blue-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open w-10 h-10"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path><path d="M12 13h6"></path><path d="M12 17h6"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors">Training & Workshops</h3>
+                    <p class="text-gray-300 mb-4">We offer training programs to empower your team to effectively use and manage your offline AI systems.</p>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li class="text-gray-300">On-site training sessions</li>
+                        <li class="text-gray-300">Customized workshops</li>
+                        <li class="text-gray-300">Documentation and resources</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <HomePage />;
-      case 'solutions':
-        return <div className="max-w-7xl mx-auto px-4 py-24 text-white">Solutions Page</div>;
-      case 'security':
-        return <div className="max-w-7xl mx-auto px-4 py-24 text-white">Security Page</div>;
-      case 'contact':
-        return <div className="max-w-7xl mx-auto px-4 py-24 text-white">Contact Page</div>;
-      default:
-        return <HomePage />;
-    }
-  };
+    <section class="container mx-auto px-4 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4">
+                Contact Us
+            </h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">
+                Get in touch to learn more about how our offline AI solutions can benefit your business.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <div class="flex items-start gap-4 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin text-blue-400 w-6 h-6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <p class="text-gray-300 whitespace-pre-line">
+                        123 AI Drive<br>
+                        Tech City, State 12345
+                    </p>
+                </div>
+                <div class="flex items-start gap-4 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone text-blue-400 w-6 h-6"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2Z"></path><path d="M15 7h4a2 2 0 0 1 2 2v2"></path><path d="M15 15h4a2 2 0 0 0 2-2v-2"></path></svg>
+                    <p class="text-gray-300">+1 (555) 123-4567</p>
+                </div>
+                <div class="flex items-start gap-4 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail text-blue-400 w-6 h-6"><path d="M4 4h16c1.32 0 2.41.89 2.71 2V18c-.3 1.11-1.39 2-2.71 2H4a2.769 2.769 0 0 1-2.71-2V6c.3-1.11 1.39-2 2.71-2Z"></path><path d="M22 6l-10 7L2 6"></path></svg>
+                    <a href="mailto:info@aiengineering.com" class="text-gray-300 hover:text-blue-400 transition-colors">info@aiengineering.com</a>
+                </div>
+                <div class="flex items-start gap-4 mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square text-blue-400 w-6 h-6"><path d="M4 21.48a2 2 0 0 1-2-2v-12a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6l-2 2Z"></path><path d="M8 9h8"></path><path d="M8 12h8"></path><path d="M8 15h4"></path></svg>
+                    <p class="text-gray-300 whitespace-pre-line">
+                        Live Chat Available<br>
+                        Mon-Fri, 9am-5pm PST
+                    </p>
+                </div>
+            </div>
+            <div>
+                <form class="bg-white/5 backdrop-blur-md rounded-xl p-6 shadow-lg border border-white/10 space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+                        <input type="text" id="name" class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+                        <input type="email" id="email" class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="you@example.com">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                        <textarea id="message" rows="4" class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 py-3 rounded-lg shadow-lg">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-  return (
-    <Layout>
-      <Navbar onNavigate={setCurrentPage} />
-      {renderPage()}
-    </Layout>
-  );
-}
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            &copy; 2024 AI Engineering Firm. All rights reserved. | <a href="#" class="hover:text-blue-400 transition-colors">Privacy Policy</a> | <a href="#" class="hover:text-blue-400 transition-colors">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript to handle the offline warning
+        const offlineWarning = document.getElementById('offline-warning');
+
+        window.addEventListener('online', () => {
+            offlineWarning.classList.add('hidden');
+        });
+
+        window.addEventListener('offline', () => {
+            offlineWarning.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

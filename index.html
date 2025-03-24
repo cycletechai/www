@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Offline AI Solutions</title>
+    <title>CycleTech AI - Secure Offline AI Solutions</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -11,18 +11,25 @@
             padding: 0;
             line-height: 1.6;
             color: #333;
-            background-color: #f8f8f8; /* Light gray background */
+            background-color: #f8f8f8;
         }
 
         header {
-            background-color: #f0f0f0; /* Slightly darker gray for header */
+            background-color: #f0f0f0;
             padding: 20px;
             text-align: center;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
+        nav {
+            background-color: #e8e8e8;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007bff;
         }
 
         section {
@@ -31,7 +38,7 @@
             margin: 0 auto;
         }
 
-        section h2 {
+        h2 {
             color: #222;
             margin-bottom: 20px;
         }
@@ -50,37 +57,50 @@
         }
 
         .contact-section {
-            background-color: #e8e8e8; /* Another shade of gray for contact */
+            background-color: #e8e8e8;
             padding: 40px 20px;
             text-align: center;
         }
 
-        .contact-section h2 {
+        .contact-section form {
+            display: inline-block;
+            text-align: left;
+        }
+
+        .contact-section label, .contact-section input, .contact-section textarea, .contact-section button {
+            display: block;
+            margin-bottom: 10px;
+            width: 300px;
+        }
+
+        .diagram {
+            text-align: center;
             margin-bottom: 20px;
         }
 
-        .contact-section p {
-            margin-bottom: 30px;
-        }
-
-        .contact-section a {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
+        .diagram img {
+            max-width: 100%;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Secure Offline AI Solutions</h1>
-        <p>Your Data. Your Control. No Internet Required.</p>
+        <h1>CycleTech AI</h1>
+        <p>Secure Offline AI Solutions</p>
     </header>
 
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="ai.html">AI & ML</a>
+        <a href="data.html">Data & Automation</a>
+        <a href="security.html">Security</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
     <section>
-        <h2>Addressing Your Security Concerns</h2>
-        <p>Many companies are hesitant to use AI platforms due to concerns about data security and the potential for intellectual property theft. We provide a solution that eliminates these risks.</p>
+        <h2>Welcome to CycleTech AI</h2>
+        <p>We specialize in providing secure, offline AI solutions for businesses concerned about data security and intellectual property protection.</p>
+        <p>Our platform enables you to leverage the power of artificial intelligence without the need for an internet connection, ensuring your sensitive data remains within your secure environment.</p>
 
         <div class="feature">
             <h3>Complete Data Isolation</h3>
@@ -91,23 +111,68 @@
             <h3>Enhanced Intellectual Property Protection</h3>
             <p>Keep your proprietary algorithms and data models safe from unauthorized access. Our solution prevents data breaches and IP theft, giving you complete control.</p>
         </div>
-
-        <div class="feature">
-            <h3>Customizable and Scalable Solutions</h3>
-            <p>Tailored AI solutions designed to meet your specific needs. Deploy powerful AI capabilities without compromising your security standards.</p>
-        </div>
-
-        <div class="feature">
-            <h3>Powerful Performance, Localized</h3>
-            <p>Experience the full potential of AI with high-performance computing on your local hardware. No reliance on cloud services or external servers.</p>
-        </div>
-
     </section>
 
-    <section class="contact-section">
-        <h2>Ready to Secure Your AI?</h2>
-        <p>Contact us today to learn how our offline AI solutions can benefit your business.</p>
-        <a href="mailto:info@secureofflineai.com">Contact Us</a>
-    </section>
+    <script>
+        // Basic email validation
+        function validateEmail(email) {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function sendEmail(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if(!validateEmail(email)){
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            const mailtoLink = `mailto:info@cycletech.ai?subject=Contact%20Form%20Submission&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`)}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>AI & ML</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><a href="index.html">Home</a><a href="ai.html">AI & ML</a><a href="data.html">Data & Automation</a><a href="security.html">Security</a><a href="contact.html">Contact</a></nav>
+<section><h2>AI and Machine Learning</h2><p>Explanation of AI and ML</p><div class="diagram"><img src="ai_ml_diagram.png" alt="AI/ML Diagram"></div></section>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Data & Automation</title><link rel="stylesheet" href="style.css"></head>
+<body><nav><a href="index.html">Home</a><a href="ai.html">AI & ML</a><a href="data.html">Data & Automation</a><a href="security.html">Security</a><a href="contact.html">Contact</a></nav><section><h2>Data Science, Big Data, and Automation</h2><p>Explanation of Data Science, Big Data, and Automation</p><div class="diagram"><img src="data_automation_diagram.png" alt="Data/Automation Diagram"></div></section></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Security</title><link rel="stylesheet" href="style.css"></head>
+<body><nav><a href="index.html">Home</a><a href="ai.html">AI & ML</a><a href="data.html">Data & Automation</a><a href="security.html">Security</a><a href="contact.html">Contact</a></nav><section><h2>Security and Integration</h2><p>Explanation of Security and Integration</p><div class="diagram"><img src="security_integration_diagram.png" alt="Security/Integration Diagram"></div></section></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Contact Us</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<nav><a href="index.html">Home</a><a href="ai.html">AI & ML</a><a href="data.html">Data & Automation</a><a href="security.html">Security</a><a href="contact.html">Contact</a></nav>
+<section class="contact-section"><h2>Contact CycleTech AI</h2>
+<form onsubmit="sendEmail(event)">
+<label for="name">Name:</label><input type="text" id="name" name="name" required>
+<label for="email">Email:</label><input type="email" id="email" name="email" required>
+<label for="message">Message:</label><textarea id="message" name="message" rows="4" required></textarea>
+<button type="submit">Send Email</button>
+</form></section>
+<script src="index.js"></script>
 </body>
 </html>

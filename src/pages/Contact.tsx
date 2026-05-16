@@ -27,13 +27,13 @@ export default function Contact() {
               <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-4">
                 <Phone className="text-primary" />
               </div>
-              <span>+1 (800) 555-0199</span>
+              <span>(201) 603-2200</span>
             </div>
             <div className="flex items-center text-gray-300">
               <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mr-4">
                 <MapPin className="text-primary" />
               </div>
-              <span>San Francisco, CA (HQ)</span>
+              <span>Irvine, CA</span>
             </div>
           </div>
         </div>

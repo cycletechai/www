@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#030712', // slate-950
-        foreground: '#f8fafc', // slate-50
+        background: '#0B1B3D', // navy electric blue
+        foreground: '#f8fafc',
         primary: {
           DEFAULT: '#3b82f6', // blue-500
           foreground: '#ffffff',
